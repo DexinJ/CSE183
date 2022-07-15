@@ -1,0 +1,125 @@
+timestamp: 2021-04-25T10:43:06.851859
+CREATE TABLE "py4web_session"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "rkey" CHAR(512),
+    "rvalue" TEXT,
+    "expiration" INTEGER,
+    "created_on" TIMESTAMP,
+    "expires_on" TIMESTAMP
+);
+success!
+timestamp: 2021-04-25T10:43:06.856675
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "email" CHAR(512) UNIQUE,
+    "password" CHAR(512),
+    "first_name" CHAR(512),
+    "last_name" CHAR(512),
+    "sso_id" CHAR(512),
+    "action_token" CHAR(512),
+    "last_password_change" TIMESTAMP,
+    "past_passwords_hash" TEXT
+);
+success!
+timestamp: 2021-04-25T10:43:06.859546
+CREATE TABLE "auth_user_tag_groups"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "path" CHAR(512),
+    "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2021-04-25T10:46:34.206231
+CREATE TABLE "student"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "email" CHAR(512),
+    "first_name" CHAR(512),
+    "last_name" CHAR(512),
+    "suid" CHAR(512)
+);
+success!
+timestamp: 2021-04-25T10:46:58.183102
+CREATE TABLE "contact"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_email" CHAR(512),
+    "first_name" CHAR(512),
+    "last_name" CHAR(512),
+    "suid" CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2021-04-25T12:41:47.828850
+CREATE TABLE "phone"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "contact_id" INTEGER REFERENCES "contact" ("id") ON DELETE CASCADE  
+);
+success!
+success!
+timestamp: 2021-04-25T12:59:26.588661
+ALTER TABLE "phone" ADD "phone_number" CHAR(512);
+timestamp: 2021-04-25T12:59:26.592057
+ALTER TABLE "phone" ADD "phone_name" CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
